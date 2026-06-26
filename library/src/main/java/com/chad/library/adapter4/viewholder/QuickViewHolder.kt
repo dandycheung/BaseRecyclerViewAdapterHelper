@@ -8,7 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.*
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.IdRes
+import androidx.annotation.LayoutRes
+import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
@@ -91,7 +96,6 @@ open class QuickViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     }
 
     fun setEnabled(@IdRes viewId: Int, isEnabled: Boolean) = apply {
-        getView<View>(viewId).isSelected
         getView<View>(viewId).isEnabled = isEnabled
     }
 
