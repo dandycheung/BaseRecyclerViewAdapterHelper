@@ -153,18 +153,7 @@ abstract class TrailingLoadStateAdapter<VH : RecyclerView.ViewHolder>(
                 llm.findFirstCompletelyVisibleItemPosition() != 0
     }
 
-    private fun getTheBiggestNumber(numbers: IntArray?): Int {
-        var tmp = -1
-        if (numbers == null || numbers.isEmpty()) {
-            return tmp
-        }
-        for (num in numbers) {
-            if (num > tmp) {
-                tmp = num
-            }
-        }
-        return tmp
-    }
+    private fun getTheBiggestNumber(numbers: IntArray): Int = numbers.maxOrNull() ?: -1
 
     /**
      * Set load state listener
