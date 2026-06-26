@@ -71,6 +71,11 @@ abstract class BaseQuickAdapter<T : Any, VH : RecyclerView.ViewHolder>(
         get() {
             return mDiffer?.currentList ?: _items
         }
+        @Deprecated(
+            message = "Setting items directly is not supported. Use submitList(list) to replace adapter data.",
+            replaceWith = ReplaceWith("submitList(value)"),
+            level = DeprecationLevel.ERROR,
+        )
         set(value) {
             if (mDiffer != null) {
                 mDiffer.submitList(value, null)
